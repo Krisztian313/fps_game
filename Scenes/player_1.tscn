@@ -1,6 +1,12 @@
 [gd_scene format=3 uid="uid://bgeqxa8jeyyib"]
 
+[ext_resource type="ArrayMesh" uid="uid://cyyc387upofej" path="res://resources/accesories/satyesz.obj" id="1_2mvbs"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r7fgb"]
+albedo_color = Color(0.23529412, 0, 0.62352943, 1)
+
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_r7fgb"]
+material = SubResource("StandardMaterial3D_r7fgb")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2mvbs"]
 
@@ -8,11 +14,15 @@
 
 [node name="CharacterBody3D" type="RigidBody3D" parent="." unique_id=865619130]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D" unique_id=439634745]
+[node name="body" type="MeshInstance3D" parent="CharacterBody3D" unique_id=439634745]
 mesh = SubResource("CapsuleMesh_r7fgb")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=2060536153]
+[node name="body2" type="CollisionShape3D" parent="CharacterBody3D" unique_id=2060536153]
 shape = SubResource("CapsuleShape3D_2mvbs")
+
+[node name="sapka" type="MeshInstance3D" parent="CharacterBody3D" unique_id=499498672]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0.90549153, 0)
+mesh = ExtResource("1_2mvbs")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=501929263]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
